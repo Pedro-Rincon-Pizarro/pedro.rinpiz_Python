@@ -1,0 +1,3 @@
+https://github.com/Pedro-Rincon-Pizarro/pedro.rinpiz_Python.git
+correo-odoo: pedro.rinpiz@educa.jcyl.es
+contraseña-odoo: Pa$$w0rd
