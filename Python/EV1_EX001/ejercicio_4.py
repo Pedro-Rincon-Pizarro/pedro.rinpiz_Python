@@ -1,22 +1,24 @@
 numeros = [3, -1, 0, 4, -5, 0, 7, -2]
 
 def clasificar_numeros(numeros):
-    positivos = int(0)
-    negativos = int(0)
-    ceros = int(0)
+    # Debe guardar 3 listas, no contar cuantos hay
+    positivos = []
+    negativos = []
+    ceros = []
+
     for numero in numeros:
         if numero > 0:
-            positivos += 1
-
+            positivos.append(numero)
         if numero < 0:
-            negativos += 1
+            negativos.append(numero)
         if numero == 0:
-            ceros += 1
+            ceros.append(numero)
 
-    clasificacion = {positivos, negativos, ceros}
+    # Tiene que devolver una tupla no imprimir un mensaje
+    return (positivos, negativos, ceros)
 
-    return print(f"Positivos: {positivos}, Negativos: {negativos}, Ceros: {ceros}")
 
-
-clasificar_numeros(numeros)
-
+clasificacion = clasificar_numeros(numeros)
+print("Números positivos:", clasificacion[0])
+print("Números negativos:", clasificacion[1])
+print("Ceros:", clasificacion[2])
