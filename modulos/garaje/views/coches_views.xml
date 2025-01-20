@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+
+
+        <record model="ir.ui.view" id="garaje_coche_list">
+            <field name="name">garaje.coche.list</field>
+            <field name="model">garaje.coche</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="matricula" />
+                    <field name="fecha_fabricacion" />
+                    <field name="propietario" />
+                    <field name="kilometros" />
+                    <field name="name" />
+                    <field name="color" />
+                    <field name="puertas" />
+                    <field name= "antiguedad"/>
+                    <field name= "tipo_motor"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="garaje_coche_form">
+            <field name="name">garaje.coche.form</field>
+            <field name="model">garaje.coche</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="matricula" />
+                    <field name="fecha_fabricacion" />
+                    <field name="propietario" />
+                    <field name="kilometros" />
+                    <field name="name" />
+                    <field name="color" />
+                    <field name="puertas" />
+                    <field name="antiguedad" />
+                    <field name= "tipo_motor"/>
+                    <field name= "marca"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="garaje_coches_action_window">
+            <field name="name">Coches</field>
+            <field name="res_model">garaje.coche</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem name="Gestión del garaje" id="garaje_coches_menu_root" />
+        <menuitem name="Coches" id="gestion_coches_menu"
+            parent="garaje_coches_menu_root"
+            action="garaje_coches_action_window" />
+
+        
+
+    </data>
+</odoo>

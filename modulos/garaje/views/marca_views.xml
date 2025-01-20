@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+
+
+        <record model="ir.ui.view" id="garaje_marca_list">
+            <field name="name">garaje.marca.list</field>
+            <field name="model">garaje.marca</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name" />
+                    <field name= "coches"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="garaje_marca_form">
+            <field name="name">garaje.marca.form</field>
+            <field name="model">garaje.marca</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="garaje_marcas_action_window">
+            <field name="name">Marcas</field>
+            <field name="res_model">garaje.marca</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem name="Marcas" id="gestion_marcas_menu"
+            parent="garaje_coches_menu_root"
+            action="garaje_marcas_action_window" />
+    </data>
+</odoo>
