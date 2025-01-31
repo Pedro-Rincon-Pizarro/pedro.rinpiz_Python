@@ -1,0 +1,68 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="biblio_prestamo.list">
+      <field name="name">BiblioPrestamo list</field>
+      <field name="model">biblio_prestamo.biblio_prestamo</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="biblio_prestamo.action_window">
+      <field name="name">BiblioPrestamo window</field>
+      <field name="res_model">biblio_prestamo.biblio_prestamo</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="biblio_prestamo.action_server">
+      <field name="name">BiblioPrestamo server</field>
+      <field name="model_id" ref="model_biblio_prestamo_biblio_prestamo"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="BiblioPrestamo" id="biblio_prestamo.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="biblio_prestamo.menu_1" parent="biblio_prestamo.menu_root"/>
+    <menuitem name="Menu 2" id="biblio_prestamo.menu_2" parent="biblio_prestamo.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="biblio_prestamo.menu_1_list" parent="biblio_prestamo.menu_1"
+              action="biblio_prestamo.action_window"/>
+    <menuitem name="Server to list" id="biblio_prestamo" parent="biblio_prestamo.menu_2"
+              action="biblio_prestamo.action_server"/>
+-->
+
+    <menuitem name="Gestión de Biblioteca" id="biblio_prestamo.menu_root"/>
+
+
+
+    <menuitem name="Libros" id="biblio_prestamo.menu_libros" parent="biblio_prestamo.menu_root"/>
+    <menuitem name="Películas" id="biblio_prestamo.menu_peliculas" parent="biblio_prestamo.menu_root"/>
+    <menuitem name="Préstamos" id="biblio_prestamo.menu_prestamos" parent="biblio_prestamo.menu_root"/>
+  </data>
+</odoo>

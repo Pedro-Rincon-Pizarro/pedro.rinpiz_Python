@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="biblio_prestamo.pelicula_list">
+            <field name="name">BiblioPrestamo.pelicula.list</field>
+            <field name="model">biblio_prestamo.pelicula</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="titulo" />
+                    <field name="anno_estreno" />
+                    <field name="directores" />
+                    <field name="productora"/>
+                    <field name="paises_origen"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="biblio_prestamo.pelicula_form">
+            <field name="name">BiblioPrestamo.pelicula.form</field>
+            <field name="model">biblio_prestamo.pelicula</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                    <field name="titulo" />
+                    <field name="directores" />
+                    <field name="productora"/>
+                    <field name="anno_estreno" />
+                    <field name="paises_origen"/>
+                    <field name="duracion" />
+                    <field name="clasificacion_edad" />
+                    <field name="portada" options="{'size': [200, 400]}"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="biblio_prestamo.pelicula_action_window">
+            <field name="name">Peliculas</field>
+            <field name="res_model">biblio_prestamo.pelicula</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem name="Peliculas" id="biblio_prestamo.submenu_peliculas" parent="biblio_prestamo.menu_peliculas" action="biblio_prestamo.pelicula_action_window"
+                sequence = "1"/>
+    </data>
+</odoo>

@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="biblio_prestamo.autor_list">
+            <field name="name">BiblioPrestamo.autor.list</field>
+            <field name="model">biblio_prestamo.autor</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name" />
+                    <field name="fecha_nacimiento" />
+                    <field name="fecha_muerte" />
+                    
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="biblio_prestamo.autor_form">
+            <field name="name">BiblioPrestamo.autor.form</field>
+            <field name="model">biblio_prestamo.autor</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="nombre" />
+                        <field name="apellido_1" />
+                        <field name="fotografia" options="{'size': [200, 200]}" />
+                        <field name="nacionalidad"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="biblio_prestamo.autor_action_window">
+            <field name="name">Autores</field>
+            <field name="res_model">biblio_prestamo.autor</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="biblio_prestamo.escritor_action_window">
+            <field name="name">Escritores</field>
+            <field name="res_model">biblio_prestamo.autor</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('es_escritor', '=', True)]</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="biblio_prestamo.director_action_window">
+            <field name="name">Directores</field>
+            <field name="res_model">biblio_prestamo.autor</field>
+            <field name="view_mode">list,form</field>
+            <field name="domain">[('es_director', '=', True)]</field>
+        </record>
+
+        <menuitem name="Escritores" id="biblio_prestamo.libros_autores" parent="biblio_prestamo.menu_libros" action="biblio_prestamo.escritor_action_window"/>
+        <menuitem name="Directores" id="biblio_prestamo.prestamos_autores" parent="biblio_prestamo.menu_peliculas" action="biblio_prestamo.director_action_window"/>
+        <menuitem name="Autores" id="biblio_prestamo.menu_autores" parent="biblio_prestamo.menu_root" action= "biblio_prestamo.autor_action_window"/>
+    </data>
+</odoo>
