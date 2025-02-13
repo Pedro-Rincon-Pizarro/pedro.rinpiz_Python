@@ -1,0 +1,81 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="prp_discografia.list">
+      <field name="name">prpDiscografia list</field>
+      <field name="model">prp_discografia.prp_discografia</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="prp_discografia.action_window">
+      <field name="name">prpDiscografia window</field>
+      <field name="res_model">prp_discografia.prp_discografia</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="prp_discografia.action_server">
+      <field name="name">prpDiscografia server</field>
+      <field name="model_id" ref="model_prp_discografia_prp_discografia"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Discografía (Pedro Rincón)" id="prp_discografia.menu_root"/>
+
+    <record model="ir.actions.act_window" id="prp_discografia_genero.action_window">
+      <field name="name">Generos</field>
+      <field name="res_model">prp_discografia.genero</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="prp_discografia_artista.action_window">
+      <field name="name">Artistas</field>
+      <field name="res_model">prp_discografia.artista</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="prp_discografia_disco.action_window">
+      <field name="name">Discos</field>
+      <field name="res_model">prp_discografia.disco</field>
+      <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem name="Generos" id="prp_discografia.submenu_genero" parent= "prp_discografia.menu_root" action="prp_discografia_genero.action_window"/>
+    <menuitem name="Artistas" id="prp_discografia.submenu_artista" parent= "prp_discografia.menu_root" action="prp_discografia_artista.action_window"/>
+    <menuitem name="Discos" id="prp_discografia.submenu_disco" parent= "prp_discografia.menu_root" action="prp_discografia_disco.action_window"/>
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="prp_discografia.menu_1" parent="prp_discografia.menu_root"/>
+    <menuitem name="Menu 2" id="prp_discografia.menu_2" parent="prp_discografia.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="prp_discografia.menu_1_list" parent="prp_discografia.menu_1"
+              action="prp_discografia.action_window"/>
+    <menuitem name="Server to list" id="prp_discografia" parent="prp_discografia.menu_2"
+              action="prp_discografia.action_server"/>
+-->
+  </data>
+</odoo>

@@ -1,0 +1,29 @@
+<odoo>
+  <data noupdate="1">
+    <record id="CD" model="prp_discografia.formato">
+        <field name="nombre">CD</field>
+        <field name="es_fisico">True</field>
+    </record>
+
+    <record id="Vinilo" model="prp_discografia.formato">
+        <field name="nombre">Vinilo</field>
+        <field name="es_fisico">True</field>
+    </record>
+
+    <record id="Cassette" model="prp_discografia.formato">
+        <field name="nombre">Cassette</field>
+        <field name="es_fisico">True</field>
+    </record>
+
+    <record id="MP4" model="prp_discografia.formato">
+        <field name="nombre">MP4</field>
+        <field name="es_fisico">False</field>
+    </record>
+
+    <record id="Streaming" model="prp_discografia.formato">
+        <field name="nombre">Streaming</field>
+        <field name="es_fisico">False</field>
+    </record>
+
+  </data>
+</odoo>
